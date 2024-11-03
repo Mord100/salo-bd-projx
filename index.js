@@ -13,7 +13,7 @@ const donationRoutes = require('./routes/donationRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
 // const communicationRoutes = require('./routes/communicationRoutes');
 const bloodStockRoutes = require('./routes/bloodStockRoutes');
-// const adminRoutes = require('./routes/adminRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.use('/api/donations', donationRoutes);
 app.use('/api/appointments', appointmentRoutes);
 // app.use('/api/communications', communicationRoutes);
 app.use('/api/blood-stock', bloodStockRoutes);
-// app.use('/api/admin', adminRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Error handling middleware
 app.use(errorHandler);
