@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 const donorRoutes = require('./routes/donorRoutes');
 const donationRoutes = require('./routes/donationRoutes');
 const appointmentRoutes = require('./routes/appointmentRoutes');
-// const communicationRoutes = require('./routes/communicationRoutes');
+const communicationRoutes = require('./routes/communicationRoutes');
 const bloodStockRoutes = require('./routes/bloodStockRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
