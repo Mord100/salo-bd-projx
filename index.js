@@ -29,7 +29,7 @@ app.use(express.json());
 app.use('/api/donors', donorRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/appointments', appointmentRoutes);
-// app.use('/api/communications', communicationRoutes);
+app.use('/api/communications', communicationRoutes);
 app.use('/api/blood-stock', bloodStockRoutes);
 app.use('/api/admin', adminRoutes);
 
