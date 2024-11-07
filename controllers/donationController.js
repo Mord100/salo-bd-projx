@@ -4,12 +4,19 @@ const { validationResult } = require('express-validator');
 
 exports.createDonation = async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
 
-    const donation = new Donation(req.body);
+    const { donationDate, bloodType, quantityMl, donationCenter } = req.body;
+    console.log("Request body:", req.body);
+    const donation = new Donation({
+      donationDate,
+      bloodType,
+      quantityMl,
+      donationCenter
+    });
     await donation.save();
 
     // Update blood stock
@@ -27,7 +34,7 @@ exports.createDonation = async (req, res) => {
 
 exports.getAllDonations = async (req, res) => {
   try {
-    const donations = await Donation.find().populate('donor');
+    const donations = await Donation.find();
     res.json(donations);
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
@@ -36,7 +43,7 @@ exports.getAllDonations = async (req, res) => {
 
 exports.getDonationById = async (req, res) => {
   try {
-    const donation = await Donation.findById(req.params.id).populate('donor');
+    const donation = await Donation.findById(req.params.id);
     if (!donation) {
       return res.status(404).json({ message: 'Donation not found' });
     }

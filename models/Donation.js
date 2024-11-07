@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
 const donationSchema = new mongoose.Schema({
-  donor: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Donor',
-    required: true
-  },
   donationDate: {
     type: Date,
     required: true
