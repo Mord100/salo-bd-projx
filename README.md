@@ -25,7 +25,7 @@ The Blood Donor Management System is a web application designed to facilitate th
    ```
 2. Navigate to the project directory:
    ```bash
-   cd donor-management-system
+   cd project-name
    ```
 3. Install the dependencies:
    ```bash
